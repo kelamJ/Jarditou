@@ -1,0 +1,125 @@
+/*Image a l'echelle de la page*/
+.promo {
+    background-size: cover;
+}
+img.promotion {
+width: 100%;
+}
+img 
+{
+     max-width: 100%;
+     height: auto;
+}
+.presentation {
+    display: grid;
+    grid-template-columns: 1fr 20%;
+}
+/* afficher le texte en ligne*/
+ 
+
+.title {text-align: left;}
+
+/* paramètre mobile*/
+@media screen and (max-width: 768px) 
+    { 
+        h1 {
+            font-size:20px;
+        }
+        .colonne { display: none !important;
+        }
+        img 
+        {
+            max-width: 100%;
+            height: auto;
+        }
+    }     
+/*Colonne de droite*/
+.colonne {
+width: 30%;
+background-color: grey;
+display: block;
+margin-top: -76px;
+}
+p.coco{
+    margin: 0;
+    justify-content: flex-end;
+    background-color: grey;
+     width: 15em;
+}
+/*Article*/
+
+
+article {
+    width: 70%;
+    
+    }
+    section{
+        display: flex;
+    }
+/*barre de navigation haut et bas */
+nav, footer{
+    background-color: black; 
+    display: flex;
+    padding: 6px;
+}
+
+.navi{
+    display: flex;
+    margin: 30px;
+    display:inline-flex;
+}
+/*Couleur liens hypertexte*/
+a {
+    color: white;
+}
+/*Style du formulaire*/
+body {
+    font-family:"trebuchet ms",sans-serif;
+    font-size:90%;
+    }
+   form {
+    background-color:#FAFAFA;
+    padding:10px;
+    width:280px;
+    }
+   fieldset {
+    padding:0 20px 20px 20px;
+    margin-bottom:10px;
+    border:1px solid #DF3F3F;
+    }
+   legend {
+    color:#DF3F3F;
+    font-weight:bold
+    }
+   label {
+    margin-top:10px;
+    display:block;
+    }
+   label.inline {
+    display:inline;
+    margin-right:50px;
+    }
+   input, textarea, select, option {
+    background-color:#FFF3F3;
+    }
+   input, textarea, select {
+    padding:3px;
+    border:1px solid #F5C5C5;
+    border-radius:5px;
+    width:200px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+    }
+   select {
+    margin-top:10px;
+    }
+   input[type=radio] {
+    background-color:transparent;
+    border:none;
+    width:10px;
+    }
+   input[type=submit], input[type=reset] {
+    width:100px;
+    margin-left:5px;
+    box-shadow:1px 1px 1px #D83F3D;
+    cursor:pointer;
+    }
