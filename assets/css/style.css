@@ -65,6 +65,9 @@ a {
 }
 
 /*Style du formulaire*/
+div {
+    text-align: center;
+}
 body {
     font-family:"trebuchet ms",sans-serif;
     font-size:90%;
