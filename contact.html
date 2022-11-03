@@ -33,22 +33,38 @@
     <div>*Ces zones sont obligatoires</div>
     <fieldset>
     <legend>Vos coordonnées</legend>
-    <label id="nom" for="nom">Votre nom*:</label> <input id="nom" type="text" name="nom">
+    <label for="nom">Votre nom*:</label>
+     <input id="nom" type="text"  name="nom">
+     <span id="nomManquant"></span>
     <br>
-    <label for="prenom">Votre prénom*:</label> <input id="nom" type="text" name="prenom">
+    <label for="prenom">Votre prénom*:</label> 
+    <input id="prenom" type="text"  name="prenom">
+    <span id="prenomManquant"></span>
     <br>
-    <label for="sexe">Sexe*:</label><input id="sexeF" type="radio" name="sexe" value="Féminin">Féminin <input id="sexeM" type="radio" name="sexe" value="Masculin">Masculin
+    <label for="sexe">Sexe*:</label>
+    <input id="sexeF" type="radio" name="sexe" required value="Féminin">Féminin 
+    <input id="sexeM" type="radio" name="sexe" required value="Masculin">Masculin
     <br>
-    <label for="date">Date de naissance*:</label><input id="date" name="date" type="date">
+    <label for="date">Date de naissance*:</label>
+    <input id="date" name="date" required type="date">
+    <span id="dateManquant"></span>
     <br>
-    <label id="codep" for="code">Code postale*:</label><input id="codep" name="code" type="text">
+    <label  for="code">Code postale*:</label>
+    <input id="codep" name="code" required type="text">
+    <span id="codepManquant"></span>
     <br>
-    <label for="adresse">Adresse</label><input id="adresse" name="adresse" type="text">
+    <label for="adresse">Adresse</label>
+    <input id="adresse" name="adresse" required type="text">
+    <span id="adresseManquant"></span>
     <br>
-    <label for="ville">Ville :</label><input id="ville" name="ville" type="text">
+    <label for="ville">Ville :</label>
+    <input id="ville" name="ville" type="text" required>
+    <span id="villeManquant"></span>
     <br>
-    <label for="email">Email*:</label><input id="email" name="email" type="email" placeholder="dave.loper@afpa.fr">
-    </fieldset>
+    <label for="email">Email*:</label>
+    <input id="mail" name="mail" type="email" required placeholder="dave.loper@afpa.fr">
+    <span id="mailManquant"></span>
+</fieldset>
     <fieldset>
     <legend>Votre demande</legend>
     <label for="sujet">Sujet*:</label>
@@ -59,13 +75,14 @@
             <option value="Réclamation">Réclamation</option>
             <option value="Autres">Autres</option>
         </select>
+        <span id="sujetManquant"></span>
     <br>
-    <label for="question">Votre question*:</label> <textarea name="question" cols="18" rows="2"></textarea>
+    <label for="question">Votre question*:</label> <textarea name="question" cols="18" rows="2" id="question"></textarea>
     </fieldset>
-    <input type="checkbox"> <label for="formulaire">* J'accepte le traitement informatique de ce formulaire</label>
+    <input required type="checkbox"> <label for="formulaire">* J'accepte le traitement informatique de ce formulaire</label>
     <br>
     <div>
-    <input type="submit" value="Envoyer">
+    <input type="submit" value="Envoyer" id="boutonEnvoi">
     <input type="reset" value="Annuler">
     </div>
 </form>

@@ -1,62 +1,114 @@
-// L'input nom doit comporter au moins 1 caractère.
-let form = document.getElementById("form");
-console.log(form.nom)
-form.nom.addEventListener("change", function ()
-{
-    valideNom(this);
-});
+let validation = document.getElementById('boutonEnvoi');
 
-const valideNom = function (inputNom)
-{
-    let nomregx = new RegExp('^[a-zA-Z ]+$');
-    let testsnom = nomregx.test(inputNom.value);
-    if (testsnom === false)
-    {
-        alert("Entrez un nom valide s.v.p");
+ let nom = document.getElementById('nom');
+ let nomM = document.getElementById('nomManquant');
+ let nomV = /^[a-zA-ZéèîïeÉÈÎï][a-zéèêàçîï]+([-'\s[a-zA-ZéèîïeÉÈÎï][a-zéèêàçîï]+)?/;
+ validation.addEventListener('click', fValid1);
+ 
+ function fValid1(e){
+    if (nom.value === "") {
+        e.preventDefault();
+        nomM.textContent = "Nom manquant";
+        nomM.style.color = "red";
+    }else if (nomV.test(nom.value) == false) {
+        e.preventDefault();
+        nomM.textContent = "Nom incorrect";
+        nomM.style.color = "orange";
+    } else {
+
     }
-    console.log(testsnom);
-}
-valideNom();
+ }
+let prenom = document.getElementById('prenom');
+let prenomM = document.getElementById('prenomManquant');
+let prenomV = /^[a-zA-ZéèîïeÉÈÎï][a-zéèêàçîï]+([-'\s[a-zA-ZéèîïeÉÈÎï][a-zéèêàçîï]+)?/;
+validation.addEventListener('click', fValid2);
 
-// // L'input contact doit comporter au moins 1 caractère.
-// form.contact.addEventListener("change", function ()
-// {
-//     valideContact(this);
-// });
-// const valideContact = function (inputContact)
-// {
-//     let contactregx = new RegExp('^[a-zA-Z ]+$');
-//     let testcontact = contactregx.test(inputContact.value);
-//     if (testcontact === false)
-//     {
-//         alert("Entrez le nom de la personne a contacter s.v.p !");
-//     }
-//     console.log(testcontact);
-// }
-// L'input codep doit comporter 5 caractères numériques.
-form.codep.addEventListener("change", function ()
-{
-    valideCodep(this);
-});
-const valideCodep = function (inputCodep)
-{
-    let codepregx = new RegExp('^([0-9]{5})$');
-    let testcodep = codepregx.test(inputCodep.value);
-    if (testcodep === false)
-{
-    alert("Entrez le code postal sur 5 chiffres s.v.p !");
+function fValid2(e){
+    if (prenom.value === "") {
+        e.preventDefault();
+        prenomM.textContent = "Prénom manquant";
+        prenomM.style.color = "red";
+    }else if (prenomV.test(prenom.value) == false) {
+        e.preventDefault();
+        prenomM.textContent = "Prénom incorrect";
+        prenomM.style.color = "orange";
+    } else {
+
+    }
 }
-    console.log(testcodep);
+let date = document.getElementById('date');
+let dateM = document.getElementById('dateManquant');
+let dateV = 
+validation.addEventListener('click', fValid3);
+
+function fValid3(e){
+    if (date.value === "") {
+        e.preventDefault();
+        dateM.textContent = "Date manquante";
+        dateM.style.color = "red";
+    }else if (dateV.test(date.value) == false) {
+        e.preventDefault();
+        dateM.textContent = "Date incorrect";
+        dateM.style.color = "orange";
+    } else {
+
+    }
 }
-valideCodep();
-// // L'input ville doit comporter au moins 1 caractère.
-// form.ville.addEventListener("change", function ()
-// {
-//     valideVille(this);
-// });
-// const valideVille = function (inputVille)
-// {
-//     let villeregx = new RegExp('^[a-zA-Z ]+$');
-//     let testville = villeregx.test(inputVille.value);
-//     console.log(testville);
-// }
+let codep = document.getElementById('codep');
+let codepM = document.getElementById('codepManquant');
+let codepV = /^([0-9]{5})$/
+validation.addEventListener('click', fValid4);
+
+function fValid4(e){
+    if (codep.value === "") {
+        e.preventDefault();
+        codepM.textContent = "Code postale manquant";
+        codepM.style.color = "red";
+    }else if (codepV.test(codep.value) == false) {
+        e.preventDefault();
+        codepM.textContent = "Code postale incorrect";
+        codepM.style.color = "orange";
+    } else {
+
+    }
+}
+let mail = document.getElementById('mail');
+let mailM = document.getElementById('mailManquant');
+let mailV = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+validation.addEventListener('click', fValid5);
+
+function fValid5(e){
+    if (mail.value === "") {
+        e.preventDefault();
+        mailM.textContent = "Éléments de l'adresse mail manquant";
+        mailM.style.color = "red";
+    }else if (mailV.test(mail.value) == false) {
+        e.preventDefault();
+        mailM.textContent = "Mail incorrect";
+        mailM.style.color = "orange";
+    } else {
+
+    }
+}
+let sujet = document.getElementById('sujet');
+let sujetM = document.getElementById('sujetManquant');
+let sujetV = 
+validation.addEventListener('click', fValid6);
+
+function fValid6(e){
+    if (sujet.value === "") {
+        e.preventDefault();
+        sujetM.textContent = "Choisir un sujet";
+        sujetM.style.color = "red";
+    }else if (sujetV.test(sujet.value) == false) {
+        
+        sujetM.textContent = "Séléctionner un sujet !";
+        sujetM.style.color = "orange";
+    } else {
+
+    }
+}
+
+
+
+
