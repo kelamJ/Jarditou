@@ -41,7 +41,6 @@ function fValid2(e){
 let date = document.getElementById('date');
 let dateM = document.getElementById('dateManquant');
 validation.addEventListener('click', fValid3);
-
 function fValid3(e){
     if (date.value === "") {
         e.preventDefault();
